@@ -7,13 +7,15 @@ namespace PadawansTask9
     {
         public static List<Point> GetNeighbors(Point point, int range, params Point[] points)
         {
-            if (point.Equals(null) || range == null || points.Equals(null) || point.X.Equals(null) || point.Y.Equals(null))
+            if (point.Equals(null) || range == null || points == null || points.Equals(null) || point.X.Equals(null) || point.Y.Equals(null)
+                 || point.X == null || point.Y == null)
             {
                 throw new ArgumentNullException();
             }
             foreach (var item in points)
             {
-                if (item.Equals(null) || item.X.Equals(null) || item.Y.Equals(null))
+                if (item.Equals(null) || item.X.Equals(null) || item.Y.Equals(null)
+                    || item.X == null || item.Y == null)
                     throw new ArgumentNullException();
             }
             if (range <= 0)
